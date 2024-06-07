@@ -6,7 +6,7 @@ void updCity(Map &map) {}
 void SaveToFile(const Map &map) {}
 void ReadFromFile(Map &map) {}
 void ShowAllCity(Map &map) {}
-void Quit() { exit(0); }
+void Quit(Map &map) { exit(0); }
 // 飞机管理函数
 void AddPlane(Plane &plane) {}
 void ShowPlane(Plane &plane) {}

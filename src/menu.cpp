@@ -23,7 +23,7 @@ int select_menu() {
 
   return opt;
 }
-void select_run(const int opt) {
+void select_run(const int opt, Map &map, Plane &plane) {
   // 用户选择要执行的函数
 
   switch (opt) {
