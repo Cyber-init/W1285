@@ -69,7 +69,12 @@ void BrakePlane(Plane &plane) {
       break;
   }
 }
-void RadarSearch(Plane &plane) {}
+void RadarSearch(Plane &plane, Map &map) {
+  double r;
+  printf("请输入半径");
+  scanf("%lf", &r);
+  plane.RadarFind(r, map);
+}
 
 void GetDistance(Map &map) {  // 获取 两个城市间的距离
   int num1;

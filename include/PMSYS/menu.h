@@ -16,10 +16,10 @@ void ReadFromFile(Map &map);      // 从文件中读取
 void ShowAllCity(Map &map);       // 显示所有城市信息
 void Quit(Map &map);              // 退出程序
 // 飞机管理函数
-void AddPlane(Plane &plane);     // 添加飞机
-void ShowPlane(Plane &plane);    // 显示飞机信息
-void BrakePlane(Plane &plane);   // 判断飞机是否可以 刹车
-void RadarSearch(Plane &plane);  // 判断飞机雷达范围内的 所有城市
+void AddPlane(Plane &plane);               // 添加飞机
+void ShowPlane(Plane &plane);              // 显示飞机信息
+void BrakePlane(Plane &plane);             // 判断飞机是否可以 刹车
+void RadarSearch(Plane &plane, Map &map);  // 判断飞机雷达范围内的 所有城市
 
 void GetDistance(Map &map);  // 获取 两个城市间的距离
 #endif

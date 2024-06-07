@@ -27,7 +27,7 @@ class Plane {
   void show();                                    // 打印飞机信息
   int CanBrake(double speed, double reDistance);  // 判断能否刹车
 
-  void RadarFind(double radarRadius, Map map);  // 扫描半径内所有城市
+  void RadarFind(double radarRadius, Map &map);  // 扫描半径内所有城市
 };
 
 #endif

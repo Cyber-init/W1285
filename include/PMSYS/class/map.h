@@ -23,6 +23,7 @@ class Map {
   int GetPostionX(int num);  // 根据城市编号获取x坐标
   int GetPostionY(int num);  // 根据城市编号获取y坐标
   void ShowCity(int num);    // 根据城市编号显示城市信息
+  vector<City> all();        // 获取所有的 城市
 };
 
 #endif
