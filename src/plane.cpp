@@ -2,7 +2,13 @@
 #include <PMSYS/class/plane.h>
 #include <stdio.h>
 
-Plane::Plane() {}
+Plane::Plane() {
+  this->number = "";
+  this->name = "";
+  this->x = 0;
+  this->y = 0;
+  this->weight = 0;
+}
 // 构造函数实现
 Plane::Plane(string number, string name, int x, int y, int weight) {
   this->number = number;
@@ -33,16 +39,23 @@ void Plane::show() {                                // 打印飞机信息
 
   printf(
       "飞机[%s](%s)\n"
-      "\tx: %d\n"
-      "\ty: %d\n"
-      "\t重量: %d\n",
+      " x: %d\n"
+      " y: %d\n"
+      " 重量: %d\n\n",
       number, name, x, y, weight);
 }
 
-bool Plane::CanBrake(double speed, double reDistance) {  // 判断能否刹车
+int Plane::CanBrake(double speed, double reDistance) {  // 判断能否刹车
   const int weight = this->getWeight();
-  return (weight * speed) / 5 < reDistance;
-  // 重量 * 速度 / 5 < 跑道剩余距离
+  if (weight) {
+    if ((weight * speed) / 5 < reDistance) {  // 重量 * 速度 / 5 < 跑道剩余距离
+      return 1;
+    } else {
+      return 0;
+    }
+  } else {
+    return -1;
+  }
 }
 
 void Plane::RadarFind(double radarRadius, Map map) {  // 扫描半径内所有城市
