@@ -23,34 +23,49 @@ int select_menu() {
 
   return opt;
 }
-void select_run(const int opt) {
+void select_run(const int opt, Map &map, Plane &plane) {
   // 用户选择要执行的函数
 
   switch (opt) {
     case 0:
-      Quit();
+      Quit(map);
+      system("pause");
       break;
     case 1:
+      system("pause");
       break;
     case 2:
+      system("pause");
       break;
     case 3:
+      system("pause");
       break;
     case 4:
+      system("pause");
       break;
     case 5:
+      system("pause");
       break;
     case 6:
+      system("pause");
       break;
     case 7:
+      AddPlane(plane);
+      system("pause");
       break;
     case 8:
+      ShowPlane(plane);
+      system("pause");
       break;
     case 9:
+      BrakePlane(plane);
+      system("pause");
       break;
     case 10:
+      system("pause");
       break;
     default:
+      system("pause");
       break;
   }
 }
