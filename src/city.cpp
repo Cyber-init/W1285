@@ -33,5 +33,5 @@ void City::setDistance(int number, double distance) {
 }
 int City::getDistance(int number) {  // 获取该城市 与 目标城市的距离
   if (this->distances.count(number) == 0) return -1;
-  return this->distances[number];  // 直接返回 巨鹿
+  return this->distances[number];  // 直接返回 距离
 }
