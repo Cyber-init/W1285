@@ -10,5 +10,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 # 设置编译输出目录
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/target)
 
+add_compile_options(-fexec-charset=GBK)
+
 # 包含子目录
 add_subdirectory(src)
