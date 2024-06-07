@@ -14,6 +14,7 @@ int select_menu() {
       "8. 显示飞机信息\n"
       "9. 判断起飞飞机是否可以刹车\n"
       "10. 查询飞机雷达半径内所有的城市信息\n"
+      "11. 测量两个城市间的距离*\n"
       "0. 退出";
   puts(menu_msg);
 
@@ -27,41 +28,49 @@ void select_run(const int opt, Map &map, Plane &plane) {
   // 用户选择要执行的函数
 
   switch (opt) {
-    case 0:
+    case 0:  // 退出程序
       Quit(map);
       system("pause");
       break;
-    case 1:
+    case 1:  // 增加城市信息
+      appendCity(map);
       system("pause");
       break;
-    case 2:
+    case 2:  // 删除城市信息
+      delCity(map);
       system("pause");
       break;
-    case 3:
+    case 3:  // 修改城市信息
+      updCity(map);
       system("pause");
       break;
-    case 4:
+    case 4:  // 保存城市信息至文件
       system("pause");
       break;
-    case 5:
+    case 5:  // 从文件读取城市信息
       system("pause");
       break;
-    case 6:
+    case 6:  // 显示所有的城市信息
+      ShowAllCity(map);
       system("pause");
       break;
-    case 7:
+    case 7:  // 设置飞机信息
       AddPlane(plane);
       system("pause");
       break;
-    case 8:
+    case 8:  // 显示飞机信息
       ShowPlane(plane);
       system("pause");
       break;
-    case 9:
+    case 9:  // 判断起飞飞机受否可以刹车
       BrakePlane(plane);
       system("pause");
       break;
-    case 10:
+    case 10:  // 查询飞机雷达半径内所有的城市信息
+      system("pause");
+      break;
+    case 11:
+      GetDistance(map);
       system("pause");
       break;
     default:

@@ -1,7 +1,9 @@
 #ifndef PMSYS__CITY_H_
 #define PMSYS__CITY_H_
+#include <map>
 #include <string>
 
+using std::map;
 using std::string;
 
 class City {
@@ -10,6 +12,7 @@ class City {
   string name;
   int x;
   int y;
+  map<int, double> distances;
 
  public:
   City();
@@ -22,5 +25,8 @@ class City {
   int getNum();                    // 读取城市编号
   int getX();                      // 读取城市x坐标
   int getY();                      // 读取城市y坐标
+  void setDistance(int number,
+                   double distance);  // 存储 该城市与 目标城市的 距离
+  int getDistance(int number);  // 获取该城市 与 目标城市的距离
 };
 #endif

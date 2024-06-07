@@ -21,4 +21,5 @@ void ShowPlane(Plane &plane);    // 显示飞机信息
 void BrakePlane(Plane &plane);   // 判断飞机是否可以 刹车
 void RadarSearch(Plane &plane);  // 判断飞机雷达范围内的 所有城市
 
+void GetDistance(Map &map);  // 获取 两个城市间的距离
 #endif
