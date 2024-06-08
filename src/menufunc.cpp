@@ -1,11 +1,39 @@
 #include <PMSYS/menu.h>
+#include <stdio.h>
 #include <stdlib.h>
-void appendCity(Map &map) {}
-void delCity(Map &map) {}
-void updCity(Map &map) {}
-void SaveToFile(const Map &map) {}
+
+void appendCity(Map &map) {
+  int num;
+  char name[39];
+  int x;
+  int y;
+  puts("请按照以下格式输入城市信息, 并以空格分隔。");
+  puts("编号 名称 X Y");
+  scanf("%d %s %d %d", &num, name, &x, &y);
+  map.AddCity(num, name, x, y);
+}
+void delCity(Map &map) {
+  int num;
+  printf("请输入要删除的城市编号: ");
+  scanf("%d", &num);
+  map.DeleteCity(num);
+  puts("删除成功");
+}
+
+void updCity(Map &map) {
+  int num;
+  printf("请输入要修改的城市编号: ");
+  scanf("%d", &num);
+  map.UpdateCity(num);
+  puts("修改成功");
+}
+
+void SaveToFile(Map &map) {}
 void ReadFromFile(Map &map) {}
-void ShowAllCity(Map &map) {}
+void ShowAllCity(Map &map) {
+  printf("城市总数：%d\n", map.GetCounter());
+  map.ShowCity();
+}
 void Quit(Map &map) { exit(0); }
 // 飞机管理函数
 void AddPlane(Plane &plane) {
@@ -45,4 +73,21 @@ void BrakePlane(Plane &plane) {
       break;
   }
 }
-void RadarSearch(Plane &plane) {}
+void RadarSearch(Plane &plane, Map &map) {
+  double r;
+  printf("请输入半径");
+  scanf("%lf", &r);
+  plane.RadarFind(r, map);
+}
+
+void GetDistance(Map &map) {  // 获取 两个城市间的距离
+  int num1;
+  int num2;
+  printf("请输入第一个城市的编号: ");
+  scanf("%d", &num1);
+  printf("请输入第二个城市的编号: ");
+  scanf("%d", &num2);
+  City c = map.FindCity(num1);
+  double d = c.getDistance(num2);
+  printf("两城市间的距离为: %lf\n", d);
+}

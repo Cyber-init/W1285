@@ -58,6 +58,13 @@ int Plane::CanBrake(double speed, double reDistance) {  // 判断能否刹车
   }
 }
 
-void Plane::RadarFind(double radarRadius, Map map) {  // 扫描半径内所有城市
-  // todo!
+void Plane::RadarFind(double radarRadius, Map &map) {  // 扫描半径内所有城市
+  printf("以下是扫描半径内所有城市\n");
+  for (City c : map.all()) {
+    const double distance =
+        map.Distance(this->getX(), this->getY(), c.getX(), c.getY());
+    if (distance <= radarRadius) {  // 通过半径比较
+      c.show();
+    }
+  }
 }

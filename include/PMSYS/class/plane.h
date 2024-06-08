@@ -4,11 +4,11 @@
 using std::string;
 class Plane {
  private:
-  string number;
-  string name;
+  string number;  // 飞机编号
+  string name;    // 飞机名称
   int x;
   int y;
-  int weight;
+  int weight;  // 飞机重量
 
  public:
   Plane();
@@ -27,7 +27,7 @@ class Plane {
   void show();                                    // 打印飞机信息
   int CanBrake(double speed, double reDistance);  // 判断能否刹车
 
-  void RadarFind(double radarRadius, Map map);  // 扫描半径内所有城市
+  void RadarFind(double radarRadius, Map &map);  // 扫描半径内所有城市
 };
 
 #endif

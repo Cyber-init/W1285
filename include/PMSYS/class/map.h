@@ -17,12 +17,13 @@ class Map {
   void SaveCity();           // 保存城市信息进入文件
   void ReadCity();           // 从文件中读取城市信息
   void UpdateCity(int num);  // 根据城市编号修改城市信息
-  int FindCity(int num);     // 根据城市编号查找城市
+  City FindCity(int num);    // 根据城市编号查找城市
   void ShowCity();           // 显示所有城市信息
   int GetCounter();          // 获取现有城市记录数
-  int GetPostionX();         // 根据城市编号获取x坐标
+  int GetPostionX(int num);  // 根据城市编号获取x坐标
   int GetPostionY(int num);  // 根据城市编号获取y坐标
   void ShowCity(int num);    // 根据城市编号显示城市信息
+  vector<City> all();        // 获取所有的 城市
 };
 
 #endif

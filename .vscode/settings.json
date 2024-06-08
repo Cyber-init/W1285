@@ -8,5 +8,6 @@
     "C_Cpp.default.cppStandard": "c++11",
     "cSpell.words": [
         "PMSYS"
-    ]
+    ],
+    "cmake.configureOnOpen": false
 }
