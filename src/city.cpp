@@ -16,7 +16,7 @@ void City::show() {
 }
 
 void City::setNumber(const int number) { this->number = number; }
-void City::setName(const string name) { this->name = name; }
+void City::setName(string name) { this->name = name; }
 void City::setPosition(const int x, const int y) {
   this->x = x;
   this->y = y;

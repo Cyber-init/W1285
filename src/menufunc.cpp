@@ -1,5 +1,7 @@
 #include <PMSYS/menu.h>
+#include <stdio.h>
 #include <stdlib.h>
+
 void appendCity(Map &map) {
   int num;
   char name[39];
@@ -17,6 +19,7 @@ void delCity(Map &map) {
   map.DeleteCity(num);
   puts("删除成功");
 }
+
 void updCity(Map &map) {
   int num;
   printf("请输入要修改的城市编号: ");
@@ -24,7 +27,8 @@ void updCity(Map &map) {
   map.UpdateCity(num);
   puts("修改成功");
 }
-void SaveToFile(const Map &map) {}
+
+void SaveToFile(Map &map) {}
 void ReadFromFile(Map &map) {}
 void ShowAllCity(Map &map) {
   printf("城市总数：%d\n", map.GetCounter());

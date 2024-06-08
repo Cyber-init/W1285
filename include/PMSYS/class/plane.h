@@ -4,11 +4,11 @@
 using std::string;
 class Plane {
  private:
-  string number;
-  string name;
+  string number;  // 飞机编号
+  string name;    // 飞机名称
   int x;
   int y;
-  int weight;
+  int weight;  // 飞机重量
 
  public:
   Plane();

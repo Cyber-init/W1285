@@ -49,10 +49,12 @@ void select_run(const int opt, Map &map, Plane &plane) {
       break;
 
     case 4:  // 保存城市信息至文件
+      SaveToFile(map);
       system("pause");
       break;
 
     case 5:  // 从文件读取城市信息
+      ReadFromFile(map);
       system("pause");
       break;
 
