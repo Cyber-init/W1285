@@ -28,8 +28,60 @@ void updCity(Map &map) {
   puts("修改成功");
 }
 
-void SaveToFile(Map &map) {}
-void ReadFromFile(Map &map) {}
+void SaveToFile(Map &map) {
+  char filename[39];
+  printf("请输入文件名: ");
+  scanf("%s", &filename);
+  FILE *fp = fopen(filename, "w");
+  if (fp == NULL) {
+    puts("保存文件失败");
+    return;
+  }
+
+  int total = map.GetCounter();
+  fprintf(fp, "%d\n", total);
+
+  for (City city : map.all()) {
+    int num = city.getNum();
+    const char *name = city.getName().c_str();
+    int x = city.getX();
+    int y = city.getY();
+    fprintf(fp, "%d %s %d %d\n", num, name, x, y);
+  }
+  fclose(fp);
+  puts("保存成功");
+}
+void ReadFromFile(Map &map) {
+  char filename[39];
+  printf("请输入文件名: ");
+  scanf("%s", &filename);
+  FILE *fp = fopen(filename, "r");
+  if (fp == NULL) {
+    puts("打开文件失败");
+    return;
+  }
+  char line[200];
+  char total_t[4];
+  fgets(line, sizeof(line), fp);
+  sscanf(line, "%s", total_t);
+  int total = atoi(total_t);
+  printf("读取到 %d 个城市\n", total);
+  while (total--) {
+    char name[10];
+    char num_t[4];
+    char x_t[4];
+    char y_t[4];  // 宽字符
+    fgets(line, sizeof(line), fp);
+    sscanf(line, "%s %s %s %s", num_t, name, x_t, y_t);
+    int num = atoi(num_t);
+    int x = atoi(x_t);
+    int y = atoi(y_t);
+    // printf("%s %s %s %s\n", num_t, name, x_t, y_t);
+    map.AddCity(num, name, x, y);
+  }
+  puts("读取成功");
+  fclose(fp);
+}
 void ShowAllCity(Map &map) {
   printf("城市总数：%d\n", map.GetCounter());
   map.ShowCity();
